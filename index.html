@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <section style="padding: 2%;">
+        <div class="container">
+            <table class="users-table">
+                <caption class="title">liste des utilisateurs</caption>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date de création</th>
+                        <th>Etat</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Nom d'utilisateur</th>
+                        <th>Matricule</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="users">
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="bar-add-user">
+                <button class="show-modal" id="display-modal-btn">
+                    Ajouter un utilisateur
+                </button>
+        </div>
+
+    </section>
+
+    <div id="modal-bg">
+        <div class="addmodal">
+            <h2>Ajouter un utilisateur</h2>
+            <form id="add-form">
+
+                <div class="form-input">
+                    <label for="fname">Prénom</label>
+                    <br>
+                    <input type="text" id="fname" name="fname" required>
+                </div>
+                <div class="form-input">
+                    <label for="lname">Nom</label>
+                    <br>
+                    <input type="text" id="lname" name="lname" required>
+                </div>
+                <div class="form-input">
+                    <label for="status">Etat</label>
+                    <br>
+                    <select id="status" name="status">
+                        <option value="none"></option>
+                        <option value="En validation">En validation</option>
+                        <option value="Validé">Validé</option>
+                        <option value="Rejeté">Rejeté</option>
+                    </select>
+                </div>
+                <div class="form-input">
+                    <label for="username">Nom d'utilisateur</label>
+                    <br>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-input">
+                    <label for="creationdate">Date de création</label>
+                    <br>
+                    <input type="date" id="creationdate" name="creationdate" required>
+                </div>
+
+                <!-- <div class="form-input">
+                </div> -->
+
+                <div class="form-input">
+                    <label for="matricule">Matricule</label>
+                    <br>
+                    <input type="text" id="matricule" name="matricule" required>
+                </div>
+
+                <button type="button" class="submit-btn" id="submit-new-user">Enregistrer</button>
+                <button type="button" class="submit-btn" id="hide-modal-btn" style="background-color: blueviolet;">cancel</button>
+                
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-delete-bg">
+        <div class="deletemodal">
+            <h2>Supprimer un utilisateur</h2>
+            <div class="accept">
+                <button class="accept-btn" id="yes" onclick="deleteUser()">
+                    OUI
+                </button>
+                <button class="accept-btn" id="no" onclick="hideDeleteModal()">
+                    NON
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<script src="deleteUser.js"></script>
+<script type="module" src="main.js"></script>
+</html>
